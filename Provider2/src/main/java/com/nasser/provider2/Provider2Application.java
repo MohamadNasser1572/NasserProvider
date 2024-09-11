@@ -14,6 +14,7 @@ public class Provider2Application {
 
     @PostMapping("/POSTprovider2")
     public String postProvider2(@RequestBody RequestPayload requestPayload) {
+        System.out.println("POST working");
         return "POST working with phoneNumber " + requestPayload.getPhoneNumber()
                 + ", message " + requestPayload.getMessage()
                 + " and language " + requestPayload.getLanguage();
