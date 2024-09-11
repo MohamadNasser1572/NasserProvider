@@ -17,6 +17,7 @@ public class Provider1Application {
     @GetMapping("/GETprovider1")
     public String getProvider1(@RequestParam Long phoneNumber,
                                @RequestParam String message) {
+        System.out.println("GET working");
         return "GET working with phoneNumber: " + phoneNumber
                 + " and message: " + message;
     }
