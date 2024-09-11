@@ -34,7 +34,7 @@ public class ProviderServiceApplication {
     @PostMapping("/POSTprovider2")
     public String postProvider2(@RequestBody RequestPayload requestPayload) {//use request payload to change the json as object( POJO).
         System.out.println("POST working");
-        String url = "http://localhost:8082/POSTprovider2?";
+        String url = "http://localhost:8082/POSTprovider2";
         String response = restTemplate().postForObject(url, requestPayload, String.class);//sends the URL that contains the data(request payload) to provider2 and returns a String.
         return response;
     }
