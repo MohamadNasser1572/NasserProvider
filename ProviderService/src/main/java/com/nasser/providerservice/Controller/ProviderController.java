@@ -4,7 +4,6 @@ import com.nasser.providerservice.Model.RequestPayload;
 import com.nasser.providerservice.Service.ProviderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.scheduling.annotation.Scheduled;
 
 @RestController
 @RequestMapping("/api")
