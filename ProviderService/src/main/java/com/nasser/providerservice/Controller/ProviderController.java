@@ -22,9 +22,4 @@ public class ProviderController {
     public String postProvider2(@RequestBody RequestPayload requestPayload) {
         return providerService.postProvider2(requestPayload);
     }
-
-    @Scheduled(fixedRate = 5000)//milliseconds
-    public void sendScheduledSms() {
-        providerService.sendScheduledSms();
-    }
 }
