@@ -1,4 +1,4 @@
-package com.nasser.providerservice;
+package com.nasser.providerservice.Model;
 
 public class RequestPayload {
     private Long phoneNumber;
