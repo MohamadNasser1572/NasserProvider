@@ -39,7 +39,7 @@ public class ProviderServiceImpl implements ProviderService {
         String message = "Your current code is " + generateRandomCode();
 
         RequestPayload payload = new RequestPayload();
-        payload.setPhoneNumber(1234567890L);
+        payload.setPhoneNumber("1234567890");
         payload.setMessage(message);
         payload.setLanguage("ENGLISH");
 
@@ -49,7 +49,6 @@ public class ProviderServiceImpl implements ProviderService {
         // Save payload to the database
         requestPayloadRepository.save(payload);
     }
-
 
 
     private String generateRandomCode() {
