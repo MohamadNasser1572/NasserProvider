@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class SmsRequestDTO {
-    private String recipientPhoneNumber;
+    private Long phoneNumber;
     private String message;
     private String language;
 }
