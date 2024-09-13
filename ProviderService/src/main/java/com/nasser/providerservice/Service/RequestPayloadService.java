@@ -11,6 +11,9 @@ public interface RequestPayloadService {
 
     List<RequestPayload> findAll();
 
-    void deleteById(Long id);
+    boolean deleteById(Long id);
+
+    boolean updateRequestPayload(Long id, RequestPayload updatedPayload);
+
 
 }
