@@ -6,6 +6,6 @@ This project, **NasserProvider**, is a Spring Boot application designed to inter
 ## Features
 - Scheduled SMS sending every 30 seconds.
 - Uses `RestTemplate` to interact with two providers.
-- Stores SMS messages and other details like phone numbers and message content in an H2 database.
+- Stores SMS messages and other details like phone numbers and message content in MYSQL database.
 - Includes a CRUD system for managing `RequestPayload` entities.
 - Full Swagger/OpenAPI documentation for API endpoints.
