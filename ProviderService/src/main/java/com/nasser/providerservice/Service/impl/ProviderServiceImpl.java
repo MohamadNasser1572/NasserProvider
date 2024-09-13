@@ -39,8 +39,8 @@ public class ProviderServiceImpl implements ProviderService {
         System.out.println("Scheduled sms sent: " + response);
     }
 
-    @Override
-    public String generateRandomCode() {
+
+    private String generateRandomCode() {
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         Random random = new Random();
         StringBuilder randomCode = new StringBuilder();

@@ -9,6 +9,4 @@ public interface ProviderService {
     String postProvider2(RequestPayload payload);
 
     void sendScheduledSms();
-
-    String generateRandomCode();
 }
