@@ -1,6 +1,7 @@
 package com.nasser.providerservice.Service.impl;
 
 import com.nasser.providerservice.Model.RequestPayload;
+import com.nasser.providerservice.Repository.RequestPayloadRepository;
 import com.nasser.providerservice.Service.ProviderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,13 @@ public class ProviderServiceImpl implements ProviderService {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    private RequestPayloadRepository requestPayloadRepository;
+
+    public ProviderServiceImpl(RequestPayloadRepository requestPayloadRepository) {
+        this.requestPayloadRepository = requestPayloadRepository;
+    }
+
 
     @Override
     public String getProvider1(Long phoneNumber, String message) {
@@ -37,7 +45,11 @@ public class ProviderServiceImpl implements ProviderService {
 
         String response = postProvider2(payload);
         System.out.println("Scheduled sms sent: " + response);
+
+        // Save payload to the database
+        requestPayloadRepository.save(payload);
     }
+
 
 
     private String generateRandomCode() {
