@@ -1,4 +1,7 @@
 package com.nasser.providerservice.Service;
 
-public class SmsService {
+import com.nasser.providerservice.DTO.SmsRequestDTO;
+
+public interface SmsService {
+    String sendSms(SmsRequestDTO smsRequest);
 }
