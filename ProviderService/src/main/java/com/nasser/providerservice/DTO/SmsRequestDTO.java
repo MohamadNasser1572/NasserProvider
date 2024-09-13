@@ -8,4 +8,5 @@ import lombok.Setter;
 public class SmsRequestDTO {
     private String recipientPhoneNumber;
     private String message;
+    private String language;
 }
