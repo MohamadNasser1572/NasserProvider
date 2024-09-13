@@ -19,7 +19,7 @@ public class RequestPayload {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long phoneNumber;
+    private String phoneNumber;
     private String message;
     private String language;
 }
