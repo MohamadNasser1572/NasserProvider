@@ -1,11 +1,58 @@
 package com.nasser.providerservice.Controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.nasser.providerservice.Model.RequestPayload;
+import com.nasser.providerservice.Service.RequestPayloadService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/requestPayload")
 public class RequestPayloadController {
 
+    @Autowired
+    private RequestPayloadService requestPayloadService;
+
+    @PostMapping
+    public ResponseEntity<String> createRequestPayload(@RequestBody RequestPayload payload) {
+        requestPayloadService.create(payload);
+        return new ResponseEntity<>("Payload created Successfully!", HttpStatus.CREATED);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<RequestPayload> getRequestPayloadById(@PathVariable Long id) {
+        RequestPayload payload = requestPayloadService.findById(id);
+        if (payload != null) {
+            return ResponseEntity.ok(payload);
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<String> updateRequestPayload(@PathVariable Long id, @RequestBody RequestPayload updatedPayload) {
+        boolean isUpdated = requestPayloadService.updateRequestPayload(id, updatedPayload);
+        if (isUpdated) {
+            return ResponseEntity.ok("RequestPayload updated successfully.");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("RequestPayload not found.");
+        }
+    }
+
+    @GetMapping
+    public ResponseEntity<List<RequestPayload>> findAll() {
+        return ResponseEntity.ok(requestPayloadService.findAll());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> DeleteRequestPayloadById(@PathVariable Long id) {
+        boolean deleted = requestPayloadService.deleteById(id);
+        if (deleted) {
+            return new ResponseEntity<>("Payload deleted successfully", HttpStatus.OK);
+        }
+        return new ResponseEntity<>("Payload not found", HttpStatus.NOT_FOUND);
+    }
 }
