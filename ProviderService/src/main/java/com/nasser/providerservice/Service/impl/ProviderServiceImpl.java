@@ -43,13 +43,13 @@ public class ProviderServiceImpl implements ProviderService {
     private String generateRandomCode() {
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         Random random = new Random();
-        StringBuilder randomCode = new StringBuilder();
+        String randomCode = "";
 
         for (int i = 0; i < 6; i++) {
-            int index = random.nextInt(characters.length());
-            randomCode.append(characters.charAt(index));
+            int index = random.nextInt(characters.length());//generate random index from the characters string
+            randomCode += characters.charAt(index);
         }
 
-        return randomCode.toString();
+        return randomCode;
     }
 }
