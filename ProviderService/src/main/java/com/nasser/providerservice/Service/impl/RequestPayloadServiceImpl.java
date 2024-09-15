@@ -1,8 +1,8 @@
 package com.nasser.providerservice.Service.impl;
 
-import com.nasser.providerservice.Model.RequestPayload;
+import com.nasser.providerservice.Entity.RequestPayload;
 import com.nasser.providerservice.Repository.RequestPayloadRepository;
-import com.nasser.providerservice.Service.RequestPayloadService;
+import com.nasser.providerservice.Service.IRequestPayloadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class RequestPayloadServiceImpl implements RequestPayloadService {
+public class RequestPayloadServiceImpl implements IRequestPayloadService {
 
     @Autowired
     private RequestPayloadRepository requestPayloadRepository;

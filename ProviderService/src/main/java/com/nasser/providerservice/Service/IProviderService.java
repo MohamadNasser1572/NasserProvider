@@ -1,8 +1,8 @@
 package com.nasser.providerservice.Service;
 
-import com.nasser.providerservice.Model.RequestPayload;
+import com.nasser.providerservice.Entity.RequestPayload;
 
-public interface ProviderService {
+public interface IProviderService {
 
     String getProvider1(Long phoneNumber, String message);
 

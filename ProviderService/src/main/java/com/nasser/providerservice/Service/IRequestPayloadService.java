@@ -1,10 +1,10 @@
 package com.nasser.providerservice.Service;
 
-import com.nasser.providerservice.Model.RequestPayload;
+import com.nasser.providerservice.Entity.RequestPayload;
 
 import java.util.List;
 
-public interface RequestPayloadService {
+public interface IRequestPayloadService {
     RequestPayload create(RequestPayload payload);
 
     RequestPayload findById(Long id);
