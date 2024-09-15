@@ -24,13 +24,13 @@ public class ProviderServiceImpl implements IProviderService {
 
     @Override
     public String getProvider1(Long phoneNumber, String message) {
-        String url = "http://localhost:8081/GETprovider1?phoneNumber=" + phoneNumber + "&message=" + message;
+        String url = "http://localhost:8081/provider1/sms?phoneNumber=" + phoneNumber + "&message=" + message;
         return restTemplate.getForObject(url, String.class);
     }
 
     @Override
     public String postProvider2(RequestPayload payload) {
-        String url = "http://localhost:8081/POSTprovider2";
+        String url = "http://localhost:8081/provider2/sms";
         return restTemplate.postForObject(url, payload, String.class);
     }
 
