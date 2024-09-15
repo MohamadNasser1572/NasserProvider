@@ -12,7 +12,7 @@ public class Provider1ServiceImpl implements ISMSProvider {
     @Override
     public String sendSMS(SMS sms) {
         final RestTemplate restTemplate = new RestTemplate();
-        final String providerUrl = "https://localhost:8082/provider1";
+        final String providerUrl = "http://localhost:8082/provider1";
 
         ResponseEntity<String> response = restTemplate.getForEntity(providerUrl + "/send?phoneNumber=" + sms.getPhoneNumber() + "&message=" + sms.getMessage(), String.class);
 

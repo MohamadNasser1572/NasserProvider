@@ -14,7 +14,7 @@ public class Provider2ServiceImpl implements ISMSProvider {
     @Override
     public String sendSMS(SMS sms) {
         final RestTemplate restTemplate = new RestTemplate();
-        final String providerUrl = "https://localhost:8082/Provider2";
+        final String providerUrl = "http://localhost:8082/Provider2";
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<SMS> request = new HttpEntity<>(sms, headers);
