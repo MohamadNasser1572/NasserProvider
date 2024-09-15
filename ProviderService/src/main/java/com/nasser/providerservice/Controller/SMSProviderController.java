@@ -15,7 +15,7 @@ public class SMSProviderController {
     @Autowired
     private ISMSProvider provider1Service;
 
-    @Qualifier("provider1Service")
+    @Qualifier("provider2Service")
     @Autowired
     private ISMSProvider provider2Service;
 
