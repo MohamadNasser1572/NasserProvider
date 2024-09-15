@@ -12,7 +12,7 @@ public class Provider2Application {
         SpringApplication.run(Provider2Application.class, args);
     }
 
-    @PostMapping("/POSTprovider2")
+    @PostMapping("/provider2/sms")
     public String postProvider2(@RequestBody RequestPayload requestPayload) {
         System.out.println("POST working");
         // Deserialization
@@ -21,7 +21,7 @@ public class Provider2Application {
                 + " and language " + requestPayload.getLanguage();
     }
 
-    @GetMapping("/GETprovider1")
+    @GetMapping("/provider1/sms")
     public String getProvider1(@RequestParam Long phoneNumber,
                                @RequestParam String message) {
         System.out.println("GET working");
