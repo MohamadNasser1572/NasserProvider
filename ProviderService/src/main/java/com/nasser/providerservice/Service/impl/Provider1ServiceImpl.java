@@ -2,22 +2,24 @@ package com.nasser.providerservice.Service.impl;
 
 import com.nasser.providerservice.Entity.SMS;
 import com.nasser.providerservice.Service.ISMSProvider;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.http.ResponseEntity;
 
 @Service
+@Qualifier("provider1Service")
 public class Provider1ServiceImpl implements ISMSProvider {
+
+    private final RestTemplate restTemplate;
+    private final String provider1Url = "http://localhost:8080/api/GETprovider1";
+
+    public Provider1ServiceImpl(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     @Override
     public String sendSMS(SMS sms) {
-        final RestTemplate restTemplate = new RestTemplate();
-        final String providerUrl = "http://localhost:8082/provider1";
-
-        ResponseEntity<String> response = restTemplate.getForEntity(providerUrl + "/send?phoneNumber=" + sms.getPhoneNumber() + "&message=" + sms.getMessage(), String.class);
-
-        System.out.println("Sending SMS for provider1");
-
-        return response.getBody();
+        String url = provider1Url + "?phoneNumber=" + sms.getPhoneNumber() + "&message=" + sms.getMessage();
+        return restTemplate.getForObject(url, String.class);
     }
 }
