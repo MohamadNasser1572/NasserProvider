@@ -15,9 +15,17 @@ public class Provider2Application {
     @PostMapping("/POSTprovider2")
     public String postProvider2(@RequestBody RequestPayload requestPayload) {
         System.out.println("POST working");
-        //deserialization
+        // Deserialization
         return "POST working with phoneNumber " + requestPayload.getPhoneNumber()
                 + ", message " + requestPayload.getMessage()
                 + " and language " + requestPayload.getLanguage();
+    }
+
+    @GetMapping("/GETprovider1")
+    public String getProvider1(@RequestParam Long phoneNumber,
+                               @RequestParam String message) {
+        System.out.println("GET working");
+        return "GET working with phoneNumber: " + phoneNumber
+                + " and message: " + message;
     }
 }
