@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 public class Provider2ServiceImpl implements ISMSProvider {
 
     private final RestTemplate restTemplate;
-    private final String provider2Url = "http://localhost:8081/POSTprovider2/sms";
+    private final String provider2Url = "http://localhost:8081/provider2/sms";
 
     public Provider2ServiceImpl(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
@@ -22,3 +22,4 @@ public class Provider2ServiceImpl implements ISMSProvider {
         return restTemplate.postForObject(provider2Url, sms, String.class);
     }
 }
+
