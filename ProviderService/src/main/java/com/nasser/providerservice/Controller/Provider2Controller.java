@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/provider2/sms")
 public class Provider2Controller {
 
+
     private final ISMSProvider smsProvider;
 
     @Autowired
@@ -24,8 +25,8 @@ public class Provider2Controller {
 
     @PostMapping
     public ResponseEntity<String> sendSMS(@RequestBody SMS request) {
-        String result = smsProvider.sendSMS(request);
-        if ("true".equalsIgnoreCase(result)) {
+        boolean result = Boolean.parseBoolean(smsProvider.sendSMS(request));
+        if (result) {
             return ResponseEntity.ok("SMS sent successfully via Provider2");
         } else {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to send SMS via Provider2");
