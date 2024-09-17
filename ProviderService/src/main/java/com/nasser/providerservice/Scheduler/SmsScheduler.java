@@ -1,6 +1,6 @@
 package com.nasser.providerservice.Scheduler;
 
-import com.nasser.providerservice.Service.ProviderService;
+import com.nasser.providerservice.Service.IProviderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -8,10 +8,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class SmsScheduler {
     @Autowired
-    private ProviderService providerService;
+    private IProviderService IProviderService;
 
     @Scheduled(fixedRate = 30000)//milliseconds
     public void sendScheduledSms() {
-        providerService.sendScheduledSms();
+        IProviderService.sendScheduledSms();
     }
 }

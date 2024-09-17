@@ -1,8 +1,8 @@
 package com.nasser.providerservice.Controller;
 
 
-import com.nasser.providerservice.Model.RequestPayload;
-import com.nasser.providerservice.Service.RequestPayloadService;
+import com.nasser.providerservice.Entity.RequestPayload;
+import com.nasser.providerservice.Service.IRequestPayloadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,17 +15,17 @@ import java.util.List;
 public class RequestPayloadController {
 
     @Autowired
-    private RequestPayloadService requestPayloadService;
+    private IRequestPayloadService IRequestPayloadService;
 
     @PostMapping
     public ResponseEntity<String> createRequestPayload(@RequestBody RequestPayload payload) {
-        requestPayloadService.create(payload);
+        IRequestPayloadService.create(payload);
         return new ResponseEntity<>("Payload created Successfully!", HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<RequestPayload> getRequestPayloadById(@PathVariable Long id) {
-        RequestPayload payload = requestPayloadService.findById(id);
+        RequestPayload payload = IRequestPayloadService.findById(id);
         if (payload != null) {
             return ResponseEntity.ok(payload);
         }
@@ -34,7 +34,7 @@ public class RequestPayloadController {
 
     @PutMapping("/{id}")
     public ResponseEntity<String> updateRequestPayload(@PathVariable Long id, @RequestBody RequestPayload updatedPayload) {
-        boolean isUpdated = requestPayloadService.updateRequestPayload(id, updatedPayload);
+        boolean isUpdated = IRequestPayloadService.updateRequestPayload(id, updatedPayload);
         if (isUpdated) {
             return ResponseEntity.ok("RequestPayload updated successfully.");
         } else {
@@ -44,12 +44,12 @@ public class RequestPayloadController {
 
     @GetMapping
     public ResponseEntity<List<RequestPayload>> findAll() {
-        return ResponseEntity.ok(requestPayloadService.findAll());
+        return ResponseEntity.ok(IRequestPayloadService.findAll());
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> DeleteRequestPayloadById(@PathVariable Long id) {
-        boolean deleted = requestPayloadService.deleteById(id);
+        boolean deleted = IRequestPayloadService.deleteById(id);
         if (deleted) {
             return new ResponseEntity<>("Payload deleted successfully", HttpStatus.OK);
         }
