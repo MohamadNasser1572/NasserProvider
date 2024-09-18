@@ -30,7 +30,7 @@ public class ProviderServiceImpl implements IProviderService {
 
     @Override
     public String postProvider2(RequestPayload payload) {
-        String url = "http://localhost:8082/POSTprovider2";
+        String url = "http://localhost:8082/provider2/sms";
         return restTemplate.postForObject(url, payload, String.class);
     }
 
