@@ -1,6 +1,6 @@
-package com.nasser.providerservice.Service;
+package com.nasser.providerservice.RequestPayload.Service;
 
-import com.nasser.providerservice.Entity.RequestPayload;
+import com.nasser.providerservice.RequestPayload.Entity.RequestPayload;
 
 import java.util.List;
 

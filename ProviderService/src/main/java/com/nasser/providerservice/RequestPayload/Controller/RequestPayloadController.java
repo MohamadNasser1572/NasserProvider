@@ -1,8 +1,8 @@
-package com.nasser.providerservice.Controller;
+package com.nasser.providerservice.RequestPayload.Controller;
 
 
-import com.nasser.providerservice.Entity.RequestPayload;
-import com.nasser.providerservice.Service.IRequestPayloadService;
+import com.nasser.providerservice.RequestPayload.Entity.RequestPayload;
+import com.nasser.providerservice.RequestPayload.Service.IRequestPayloadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

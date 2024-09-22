@@ -1,7 +1,7 @@
-package com.nasser.providerservice.Service.impl;
+package com.nasser.providerservice.Provider.Service.impl;
 
-import com.nasser.providerservice.Entity.SMS;
-import com.nasser.providerservice.Service.ISMSProvider;
+import com.nasser.providerservice.SMS.Entity.SMS;
+import com.nasser.providerservice.SMS.Service.ISMSProvider;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

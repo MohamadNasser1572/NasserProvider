@@ -1,4 +1,4 @@
-package com.nasser.providerservice.Entity;
+package com.nasser.providerservice.RequestPayload.Entity;
 
 
 import jakarta.persistence.*;

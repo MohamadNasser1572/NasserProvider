@@ -1,8 +1,8 @@
-package com.nasser.providerservice.Controller;
+package com.nasser.providerservice.Provider.Controller;
 
-import com.nasser.providerservice.Entity.SMS;
-import com.nasser.providerservice.Exception.RandomProviderException;
-import com.nasser.providerservice.Service.ISMSProvider;
+import com.nasser.providerservice.SMS.Entity.SMS;
+import com.nasser.providerservice.Provider.Exception.RandomProviderException;
+import com.nasser.providerservice.SMS.Service.ISMSProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.nasser.providerservice.DTO;
+package com.nasser.providerservice.SMS.DTO;
 
 import lombok.Getter;
 import lombok.Setter;

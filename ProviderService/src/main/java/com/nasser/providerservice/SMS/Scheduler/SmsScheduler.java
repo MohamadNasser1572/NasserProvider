@@ -1,6 +1,6 @@
-package com.nasser.providerservice.Scheduler;
+package com.nasser.providerservice.SMS.Scheduler;
 
-import com.nasser.providerservice.Service.IProviderService;
+import com.nasser.providerservice.Provider.Service.IProviderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;

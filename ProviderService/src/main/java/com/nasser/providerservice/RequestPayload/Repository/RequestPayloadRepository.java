@@ -1,6 +1,6 @@
-package com.nasser.providerservice.Repository;
+package com.nasser.providerservice.RequestPayload.Repository;
 
-import com.nasser.providerservice.Entity.RequestPayload;
+import com.nasser.providerservice.RequestPayload.Entity.RequestPayload;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

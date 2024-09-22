@@ -1,6 +1,6 @@
-package com.nasser.providerservice.Service;
+package com.nasser.providerservice.Provider.Service;
 
-import com.nasser.providerservice.Entity.RequestPayload;
+import com.nasser.providerservice.RequestPayload.Entity.RequestPayload;
 
 public interface IProviderService {
 
