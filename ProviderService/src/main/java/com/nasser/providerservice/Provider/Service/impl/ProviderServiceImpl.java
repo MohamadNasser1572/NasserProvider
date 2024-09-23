@@ -21,13 +21,6 @@ public class ProviderServiceImpl implements IProviderService {
         this.requestPayloadRepository = requestPayloadRepository;
     }
 
-
-    @Override
-    public String getProvider1(Long phoneNumber, String message) {
-        String url = "http://localhost:8081/GETprovider1?phoneNumber=" + phoneNumber + "&message=" + message;
-        return restTemplate.getForObject(url, String.class);
-    }
-
     @Override
     public String postProvider2(RequestPayload payload) {
         String url = "http://localhost:8082/provider2/sms";
