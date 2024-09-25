@@ -1,6 +1,6 @@
 package com.nasser.providerservice.RabbitMQ.Controller;
 
-import com.fasterxml.jackson.core.util.RequestPayload;
+import com.nasser.providerservice.RequestPayload.Entity.RequestPayload;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
