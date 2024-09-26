@@ -17,9 +17,13 @@ public class Queue2CronConsumer {
 
     @Scheduled(fixedRate = 10000)  //every 10 seconds
     public void consumeMessageFromQueue2() {
-        RequestPayload payload = (RequestPayload) rabbitTemplate.receiveAndConvert(RabbitMQConfig.QUEUE_2);
-        if (payload != null) {
-            System.out.println("Message consumed from queue2: " + payload.getMessage());
+        try {
+            RequestPayload payload = (RequestPayload) rabbitTemplate.receiveAndConvert(RabbitMQConfig.QUEUE_2);
+            if (payload != null) {
+                System.out.println("Message consumed from queue2: " + payload.getMessage());
+            }
+        } catch (Exception e) {
+            System.err.println("Failed to consume message from queue2: " + e.getMessage());
         }
     }
 }
