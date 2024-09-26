@@ -10,6 +10,10 @@ public class Queue1Listener {
 
     @RabbitListener(queues = RabbitMQConfig.QUEUE_1)
     public void consumeMessageFromQueue1(RequestPayload payload) {
-        System.out.println("Message consumed from queue1: " + payload.getMessage());
+        try {
+            System.out.println("Message consumed from queue1: " + payload.getMessage());
+        } catch (Exception e) {
+            System.err.println("Failed to consume message from queue1: " + e.getMessage());
+        }
     }
 }
