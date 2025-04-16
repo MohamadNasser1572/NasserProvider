@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/provider1/sms")
 public class Provider1Controller {
 
-
     private final ISMSProvider smsProvider;
 
     public Provider1Controller(@Qualifier("provider1Service") ISMSProvider smsProvider) {
@@ -31,4 +30,3 @@ public class Provider1Controller {
         }
     }
 }
-

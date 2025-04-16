@@ -33,8 +33,7 @@ public class RabbitMQConfig {
         classMapper.setIdClassMapping(idClassMapping);
         return classMapper;
     }
-
-
+    
     @Bean
     public Jackson2JsonMessageConverter jackson2JsonMessageConverter() {
         Jackson2JsonMessageConverter converter = new Jackson2JsonMessageConverter();

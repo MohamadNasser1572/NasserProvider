@@ -43,14 +43,13 @@ public class ProviderServiceImpl implements IProviderService {
         requestPayloadRepository.save(payload);
     }
 
-
     private String generateRandomCode() {
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         Random random = new Random();
         String randomCode = "";
 
         for (int i = 0; i < 6; i++) {
-            int index = random.nextInt(characters.length());//generate random index from the characters string
+            int index = random.nextInt(characters.length()); // generate random index from the characters string
             randomCode += characters.charAt(index);
         }
 

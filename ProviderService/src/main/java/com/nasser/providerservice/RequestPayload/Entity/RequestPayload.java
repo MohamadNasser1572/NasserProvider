@@ -1,6 +1,5 @@
 package com.nasser.providerservice.RequestPayload.Entity;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,5 +1,4 @@
 package com.nasser.provider2;
-//create a payload class to understand the request of the sent info from json
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

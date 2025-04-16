@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/provider2/sms")
 public class Provider2Controller {
 
-
     private final ISMSProvider smsProvider;
 
     public Provider2Controller(@Qualifier("provider2Service") ISMSProvider smsProvider) {

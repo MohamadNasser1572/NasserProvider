@@ -1,6 +1,5 @@
 package com.nasser.providerservice.SMS.Entity;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
