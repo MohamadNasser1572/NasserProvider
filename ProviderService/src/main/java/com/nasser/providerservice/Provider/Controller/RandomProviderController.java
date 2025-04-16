@@ -3,7 +3,6 @@ package com.nasser.providerservice.Provider.Controller;
 import com.nasser.providerservice.SMS.Entity.SMS;
 import com.nasser.providerservice.Provider.Exception.RandomProviderException;
 import com.nasser.providerservice.SMS.Service.ISMSProvider;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +19,6 @@ public class RandomProviderController {
     private final ISMSProvider provider1Service;
     private final ISMSProvider provider2Service;
 
-    @Autowired
     public RandomProviderController(@Qualifier("provider1Service") ISMSProvider provider1Service,
                                     @Qualifier("provider2Service") ISMSProvider provider2Service) {
         this.provider1Service = provider1Service;
