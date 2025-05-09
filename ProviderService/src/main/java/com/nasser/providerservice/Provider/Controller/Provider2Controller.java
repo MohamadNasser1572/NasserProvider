@@ -2,7 +2,6 @@ package com.nasser.providerservice.Provider.Controller;
 
 import com.nasser.providerservice.SMS.Entity.SMS;
 import com.nasser.providerservice.SMS.Service.ISMSProvider;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/provider2/sms")
 public class Provider2Controller {
 
-
     private final ISMSProvider smsProvider;
 
-    @Autowired
     public Provider2Controller(@Qualifier("provider2Service") ISMSProvider smsProvider) {
         this.smsProvider = smsProvider;
     }

@@ -14,6 +14,4 @@ public interface IRequestPayloadService {
     boolean deleteById(Long id);
 
     boolean updateRequestPayload(Long id, RequestPayload updatedPayload);
-
-
 }
